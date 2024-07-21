@@ -75,5 +75,10 @@ public class Util {
         }
         return sessionFactory;
     }
+    public static void shutDownConn() {
+        if (sessionFactory != null) {
+            sessionFactory.close();
+        }
+    }
 }
 
