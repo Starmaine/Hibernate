@@ -8,8 +8,6 @@ import java.sql.SQLException;
 public class Main {
     public static void main(String[] args) {
         // реализуйте алгоритм здесь
-        try {
-            Util.getConnection();
             UserServiceImpl user = new UserServiceImpl();
 
             user.createUsersTable();
@@ -23,12 +21,6 @@ public class Main {
             user.getAllUsers();
             user.cleanUsersTable();
             user.dropUsersTable();
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } finally {
-            Util.closeConnection();
-        }
 
     }
 }
